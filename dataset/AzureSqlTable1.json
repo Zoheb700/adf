@@ -1,0 +1,56 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DBName": {
+					"value": "@dataset().DBName",
+					"type": "Expression"
+				},
+				"Server": "samadahad.database.windows.net"
+			}
+		},
+		"parameters": {
+			"TableName": {
+				"type": "String",
+				"defaultValue": "Address"
+			},
+			"Schema": {
+				"type": "String",
+				"defaultValue": "dbo"
+			},
+			"SchemaName": {
+				"type": "String",
+				"defaultValue": "dbo"
+			},
+			"DBName": {
+				"type": "String",
+				"defaultValue": "Sales"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Empid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Address",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().SchemaName",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().TableName",
+				"type": "Expression"
+			}
+		}
+	}
+}
