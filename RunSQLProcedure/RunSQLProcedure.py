@@ -10,7 +10,7 @@ db_name = "samadahad"
 conn = pymysql.connect(host=rds_host, user=name, passwd=password, db=db_name, connect_timeout=5)
 
 with conn.cursor() as cur:
-   query="CALL public.usp_citydata_1"
+   query="CALL public.usp_citydata_2"
    cur.execute(query)
    conn.commit()
    cur.close()
